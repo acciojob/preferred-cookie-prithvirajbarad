@@ -1,31 +1,4 @@
-const questions = [
-  {
-    question: "What is the capital of France?",
-    choices: ["Paris", "London", "Berlin", "Madrid"],
-    answer: "Paris",
-  },
-  {
-    question: "What is the highest mountain in the world?",
-    choices: ["Everest", "Kilimanjaro", "Denali", "Matterhorn"],
-    answer: "Everest",
-  },
-  {
-    question: "What is the largest country by area?",
-    choices: ["Russia", "China", "Canada", "United States"],
-    answer: "Russia",
-  },
-  {
-    question: "Which is the largest planet in our solar system?",
-    choices: ["Earth", "Jupiter", "Mars"],
-    answer: "Jupiter",
-  },
-  {
-    question: "What is the capital of Canada?",
-    choices: ["Toronto", "Montreal", "Vancouver", "Ottawa"],
-    answer: "Ottawa",
-  },
-];
-
+/*  your css code here. If applicable */
 // Check if session storage is supported
 function isSessionStorageSupported() {
   try {
@@ -83,6 +56,7 @@ function saveScore(score) {
 }
 
 // Display the quiz questions and choices
+// Display the quiz questions and choices
 function renderQuestions() {
   const questionsElement = document.getElementById('questions');
   const progress = retrieveProgress();
@@ -136,8 +110,9 @@ function calculateScore() {
 }
 
 // Display the score
-function displayScore(score) {
+function displayScore() {
   const scoreElement = document.getElementById('score');
+  const score = retrieveScore();
   const scoreText = document.createTextNode(`Your score is ${score} out of ${questions.length}.`);
   scoreElement.appendChild(scoreText);
 }
@@ -146,7 +121,7 @@ function displayScore(score) {
 function handleSubmit() {
   const score = calculateScore();
   saveScore(score);
-  displayScore(score);
+  displayScore();
 }
 
 // Attach event listener to the submit button
